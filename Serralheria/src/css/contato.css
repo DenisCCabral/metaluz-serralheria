@@ -1,0 +1,142 @@
+/* ===== CONTATO ===== */
+.page-contact {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+.page-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.75), rgba(15,15,25,0.9));
+  z-index: 0;
+}
+
+/* ===== CONTEÚDO INTERNO ===== */
+.contact-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  text-align: center;
+  border: 1px solid rgba(0, 140, 255, 0.2);
+}
+
+/* ===== TÍTULOS ===== */
+.contact-inner h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0,170,255,0.8), 0 0 25px rgba(0,170,255,0.4);
+  letter-spacing: 1px;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #e0e0e0;
+}
+
+/* ===== GRID ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.contact-form,
+.contact-info {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 140, 255, 0.25);
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+/* ===== FORMULÁRIO ===== */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0,170,255,0.7);
+}
+
+.contact-form .btn-primary {
+  background: #00aaff;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0,170,255,0.4);
+}
+
+.contact-form .btn-primary:hover {
+  background: #0090e6;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,170,255,0.8);
+}
+
+/* ===== INFORMAÇÕES ===== */
+.contact-info .info-item {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00aaff;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 8px rgba(0,170,255,0.6);
+}
+
+.contact-info p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-inner {
+    padding: 2rem 1.2rem;
+  }
+
+  .page-contact {
+    padding: 4rem 1rem;
+  }
+}
