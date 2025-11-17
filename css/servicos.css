@@ -1,0 +1,179 @@
+/* =========================
+   PÁGINA DE SERVIÇOS - METALUZ (Versão Final)
+   ========================= */
+.page-services {
+  position: relative;
+  background: url('../assets/img/fundoserviços1.jpg') center/cover fixed no-repeat;
+  min-height: calc(100vh - var(--header-h));
+  padding: 120px 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* CAMADA DE ESCURECIMENTO COM GRADIENTE AZUL */
+.page-services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 40, 0.85) 0%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(5, 15, 30, 0.95) 100%
+  );
+  backdrop-filter: blur(2.5px);
+  z-index: 1;
+}
+
+/* CONTEÚDO CENTRAL */
+.page-services .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+}
+
+/* TÍTULO PRINCIPAL */
+.section-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  position: relative;
+  display: block;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #a8c0ff 0%, #3ca0f3 25%, #ffffff 50%, #3ca0f3 75%, #a8c0ff 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 6s linear infinite;
+  text-shadow: 0 0 20px rgba(60,160,243,0.3);
+}
+
+/* LINHA BRILHANTE EMBAIXO DO TÍTULO */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 580px;
+  height: 4px;
+  background: linear-gradient(90deg, #1e78b6, #3ca0f3);
+  border-radius: 2px;
+  box-shadow: 0 0 14px rgba(60,160,243,0.6);
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes shineText {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.7; width: 260px; }
+  50% { opacity: 1; width: 290px; }
+}
+
+/* GRID DE SERVIÇOS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+/* CARD DE SERVIÇO */
+.service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 30px 25px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.25) 70%, transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover::before {
+  transform: translateX(100%);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent);
+}
+
+/* ÍCONES E TEXTOS DOS CARDS */
+.service-card .icon {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #3ca0f3;
+  text-shadow: 0 0 12px rgba(60,160,243,0.6);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 0.96rem;
+  color: rgba(240, 240, 240, 0.9);
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
+.service-card:hover p {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-metal {
+  background: linear-gradient(90deg, #1e78b6, #3ca0f3);
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-top: 50px;
+}
+
+.btn-metal:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(60, 160, 243, 0.5);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .section-title { font-size: 2.3rem; }
+  .service-card { padding: 22px; }
+  .btn-metal { padding: 12px 26px; margin-top: 35px; }
+}
+/* Isola o orçamento do fundo de serviços */
+#orcamento-placeholder {
+  position: relative;
+  z-index: 5;
+  background: none;
+}
